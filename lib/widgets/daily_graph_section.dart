@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../enums.dart';
+import 'value_with_tag_or_percentage_widget.dart';
+
 class DailyGraphSection extends StatefulWidget {
   const DailyGraphSection({super.key});
 
@@ -176,6 +179,29 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
               ),
             ],
           ),
+        ),
+        const SizedBox(height: 20),
+        Wrap(
+          spacing: 12,
+          runSpacing: 12,
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.48,
+              child: ValueWithTagOrPercentageWidget(
+                heading: "Average",
+                value: "46",
+                unit: ValueUnit.mgdl,
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.48,
+              child: ValueWithTagOrPercentageWidget(
+                heading: "Average",
+                value: "46",
+                unit: ValueUnit.mgdl,
+              ),
+            ),
+          ],
         ),
       ],
     );

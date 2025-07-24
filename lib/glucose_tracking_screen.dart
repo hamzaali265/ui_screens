@@ -60,6 +60,12 @@ class _GlucoseTrackingScreenState extends State<GlucoseTrackingScreen> {
               unit: ValueUnit.percentage,
               valueColor: const Color(0xFFFAB91C),
             ),
+            ValueWithTagOrPercentageWidget(
+              heading: "Average",
+              value: "46",
+              unit: ValueUnit.mgdl,
+              backgroundColor: Colors.white,
+            ),
           ],
         ),
       ),
