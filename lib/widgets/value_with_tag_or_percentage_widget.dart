@@ -111,7 +111,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [_buildValueText(), _buildUnitText()],
         ),
-        if (tag != null) ...[const SizedBox(width: 6), _buildTag()],
+        if (tag != null) ...[const Spacer(), _buildTag()],
       ],
     );
   }
