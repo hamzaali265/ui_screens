@@ -28,7 +28,7 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
                 border: Border.all(color: const Color(0xFFEAEAEA)),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.03),
+                    color: Colors.grey.withValues(alpha: 0.03),
                     blurRadius: 4,
                     offset: const Offset(0, 2),
                   ),

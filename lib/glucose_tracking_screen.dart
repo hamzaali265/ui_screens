@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:ui_screens/widgets/custom_appbar.dart';
 
 import 'widgets/add_entry_model.dart';
 import 'widgets/current_glucose_section.dart';
@@ -21,31 +21,7 @@ class _GlucoseTrackingScreenState extends State<GlucoseTrackingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF9F9F9),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios_new_rounded,
-            color: Colors.black,
-          ),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        title: Text(
-          'Glucose tracking',
-          style: GoogleFonts.poppins(
-            color: Colors.black,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.menu, color: Colors.black),
-            onPressed: () {},
-          ),
-        ],
-      ),
+      appBar: const CustomAppBar(title: 'Glucose tracking'),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         child: Column(
