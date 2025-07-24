@@ -97,7 +97,10 @@ class LogEntry extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: const Color(0xFFFFF4E6),
                   borderRadius: BorderRadius.circular(100),
-                  border: Border.all(color: const Color(0xFFE67E22), width: 1),
+                  border: Border.all(
+                    color: const Color.fromARGB(255, 254, 219, 189),
+                    width: 1,
+                  ),
                 ),
                 child: Text(
                   '154 mg/dL',
