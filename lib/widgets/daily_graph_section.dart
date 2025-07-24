@@ -26,7 +26,6 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Top row with dropdown and title
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

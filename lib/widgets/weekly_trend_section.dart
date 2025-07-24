@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_screens/enums.dart';
+import 'package:ui_screens/widgets/custom_toggle_widget.dart';
 
 import 'value_with_tag_or_percentage_widget.dart';
 
@@ -19,13 +20,19 @@ class _WeeklyTrendsSectionState extends State<WeeklyTrendsSection> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Weekly trends',
-          style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-            color: Colors.black,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Weekly trends',
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
+                color: Colors.black,
+              ),
+            ),
+            CustomToggleWidget(),
+          ],
         ),
         const SizedBox(height: 10),
         Row(
@@ -74,38 +81,6 @@ class _WeeklyTrendsSectionState extends State<WeeklyTrendsSection> {
                 vertical: 8,
                 backgroundColor: Colors.blue[50]!,
               ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 16),
-        Row(
-          children: [
-            ChoiceChip(
-              label: Text(
-                'Week',
-                style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
-              ),
-              selected: isWeek,
-              selectedColor: Colors.black,
-              backgroundColor: const Color(0xFFF5F5F5),
-              labelStyle: TextStyle(
-                color: isWeek ? Colors.white : Colors.black,
-              ),
-              onSelected: (v) => setState(() => isWeek = true),
-            ),
-            const SizedBox(width: 8),
-            ChoiceChip(
-              label: Text(
-                'Month',
-                style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
-              ),
-              selected: !isWeek,
-              selectedColor: Colors.black,
-              backgroundColor: const Color(0xFFF5F5F5),
-              labelStyle: TextStyle(
-                color: !isWeek ? Colors.white : Colors.black,
-              ),
-              onSelected: (v) => setState(() => isWeek = false),
             ),
           ],
         ),
