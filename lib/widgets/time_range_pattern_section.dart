@@ -8,6 +8,10 @@ class TimeInRangePatternsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const Color morningColor = Color(0xFFFFD700);
+    const Color afternoonColor = Color(0xFFFFA500);
+    const Color eveningColor = Color(0xFF1E90FF);
+    const Color nightColor = Color(0xFF483D8B);
     final double cardWidth = MediaQuery.of(context).size.width * 0.45;
 
     return Column(
@@ -36,6 +40,7 @@ class TimeInRangePatternsSection extends StatelessWidget {
                 showColumnLayout: false,
                 horizontal: 12,
                 vertical: 12,
+                iconColor: morningColor,
               ),
             ),
             SizedBox(
@@ -49,6 +54,7 @@ class TimeInRangePatternsSection extends StatelessWidget {
                 showColumnLayout: false,
                 horizontal: 12,
                 vertical: 12,
+                iconColor: afternoonColor,
               ),
             ),
             SizedBox(
@@ -62,6 +68,7 @@ class TimeInRangePatternsSection extends StatelessWidget {
                 showColumnLayout: false,
                 horizontal: 12,
                 vertical: 12,
+                iconColor: eveningColor,
               ),
             ),
             SizedBox(
@@ -75,6 +82,7 @@ class TimeInRangePatternsSection extends StatelessWidget {
                 showColumnLayout: false,
                 horizontal: 12,
                 vertical: 12,
+                iconColor: nightColor,
               ),
             ),
           ],

@@ -21,6 +21,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
   final double? valueFontSize;
   final double? unitFontSize;
   final double? tagFontSize;
+  final Color? iconColor;
 
   const ValueWithTagOrPercentageWidget({
     super.key,
@@ -42,6 +43,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
     this.valueFontSize,
     this.unitFontSize,
     this.tagFontSize,
+    this.iconColor,
   });
 
   @override
@@ -87,7 +89,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         if (leadingIcon != null) ...[
-          Icon(leadingIcon, size: 18, color: valueColor),
+          Icon(leadingIcon, size: 18, color: iconColor ?? valueColor),
           const SizedBox(width: 6),
         ],
         if (heading != null) ...[
