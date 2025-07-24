@@ -49,7 +49,11 @@ class _GlucoseLogSectionState extends State<GlucoseLogSection> {
               _focusedDay = focusedDay;
             });
           },
-
+          onPageChanged: (focusedDay) {
+            setState(() {
+              _focusedDay = focusedDay;
+            });
+          },
           calendarBuilders: CalendarBuilders(
             defaultBuilder: (context, day, focusedDay) =>
                 _buildPillDay(day, false),
