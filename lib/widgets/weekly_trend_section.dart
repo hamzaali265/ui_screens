@@ -27,14 +27,14 @@ class _WeeklyTrendsSectionState extends State<WeeklyTrendsSection> {
               'Weekly trends',
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600,
-                fontSize: 16,
+                fontSize: 17,
                 color: Colors.black,
               ),
             ),
             CustomToggleWidget(),
           ],
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 16),
         Row(
           children: [
             Expanded(

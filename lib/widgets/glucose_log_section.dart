@@ -30,6 +30,7 @@ class _GlucoseLogSectionState extends State<GlucoseLogSection> {
           'Glucose log',
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w600,
+            fontSize: 17,
             color: Colors.black,
           ),
         ),

@@ -21,6 +21,7 @@ class TimeInRangePatternsSection extends StatelessWidget {
               'Time in range patterns',
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600,
+                fontSize: 17,
                 color: Colors.black,
               ),
             ),

@@ -90,8 +90,8 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
                 Text(
                   'Daily graph',
                   style: GoogleFonts.poppins(
-                    fontSize: 18,
                     fontWeight: FontWeight.w600,
+                    fontSize: 17,
                     color: Colors.black,
                   ),
                 ),

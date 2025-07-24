@@ -27,7 +27,7 @@ class DailyAveragesSection extends StatelessWidget {
           'Daily averages',
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w600,
-            fontSize: 18,
+            fontSize: 17,
             color: Colors.black,
           ),
         ),

@@ -75,7 +75,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
         Row(
           children: [
             _buildValueText(),
-            Flexible(child: _buildUnitText()),
+            _buildUnitText(),
             const Spacer(),
             _buildTag(),
           ],
@@ -135,7 +135,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
       child: Text(
         unitLabel,
         overflow: TextOverflow.clip,
-        maxLines: 2,
+        maxLines: 1,
         style: GoogleFonts.poppins(
           fontSize: unitFontSize ?? 13,
           color: unitColor ?? headingColor,
