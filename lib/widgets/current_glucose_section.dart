@@ -37,6 +37,7 @@ class CurrentGlucoseSection extends StatelessWidget {
           value: '128',
           unit: ValueUnit.mgdl,
           tag: "In range",
+          vertical: 18,
           backgroundColor: Colors.grey.withValues(alpha: 0.05),
         ),
       ],

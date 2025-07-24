@@ -55,7 +55,6 @@ class _WeeklyTrendsSectionState extends State<WeeklyTrendsSection> {
             Expanded(
               child: ValueWithTagOrPercentageWidget(
                 heading: 'Time in range',
-
                 headingFontSize: 10,
                 value: '78',
                 unit: ValueUnit.percentage,
