@@ -99,7 +99,6 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
             ),
             const SizedBox(height: 14),
 
-            // Graph container
             Container(
               width: double.infinity,
               height: 140,
@@ -139,56 +138,23 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text(
+                        children: [
+                          for (final label in [
                             '12 AM',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFFBDBDBD),
-                            ),
-                          ),
-                          Text(
                             '01 PM',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFFBDBDBD),
-                            ),
-                          ),
-                          Text(
                             '02 PM',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFFBDBDBD),
-                            ),
-                          ),
-                          Text(
                             '03 PM',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFFBDBDBD),
-                            ),
-                          ),
-                          Text(
                             '04 PM',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFFBDBDBD),
-                            ),
-                          ),
-                          Text(
                             '05 PM',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFFBDBDBD),
-                            ),
-                          ),
-                          Text(
                             '06 PM',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFFBDBDBD),
+                          ])
+                            Text(
+                              label,
+                              style: const TextStyle(
+                                fontSize: 12,
+                                color: Color(0xFFBDBDBD),
+                              ),
                             ),
-                          ),
                         ],
                       ),
                     ),
@@ -198,7 +164,6 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
             ),
             const SizedBox(height: 20),
 
-            // Value cards
             Wrap(
               spacing: spacing,
               runSpacing: 8,

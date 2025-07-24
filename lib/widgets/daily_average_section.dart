@@ -47,7 +47,7 @@ class DailyAveragesSection extends StatelessWidget {
             ],
           ),
           child: SizedBox(
-            height: 200, // Increased height to accommodate percentage labels
+            height: 200,
             child: BarChart(
               BarChartData(
                 alignment: BarChartAlignment.spaceEvenly,
@@ -68,8 +68,7 @@ class DailyAveragesSection extends StatelessWidget {
                   bottomTitles: AxisTitles(
                     sideTitles: SideTitles(
                       showTitles: true,
-                      reservedSize:
-                          50, // Increased reserved size for percentage + day labels
+                      reservedSize: 50,
                       getTitlesWidget: (value, meta) {
                         const days = [
                           'Sun',

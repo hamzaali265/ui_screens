@@ -29,10 +29,18 @@ class EntryField extends StatelessWidget {
                 fontSize: 14,
               ),
               filled: true,
-              fillColor: const Color(0xFFF5F5F5),
+              fillColor: Colors.white,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide.none,
+                borderSide: const BorderSide(color: Color(0xFFEAEAEA)),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: const BorderSide(color: Color(0xFFEAEAEA)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: const BorderSide(color: Color(0xFFBDBDBD)),
               ),
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 14,
