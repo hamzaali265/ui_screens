@@ -17,6 +17,10 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
   final double horizontal;
   final double vertical;
   final bool showColumnLayout;
+  final double? headingFontSize;
+  final double? valueFontSize;
+  final double? unitFontSize;
+  final double? tagFontSize;
 
   const ValueWithTagOrPercentageWidget({
     super.key,
@@ -34,6 +38,10 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
     this.horizontal = 16,
     this.vertical = 14,
     this.showColumnLayout = false,
+    this.headingFontSize,
+    this.valueFontSize,
+    this.unitFontSize,
+    this.tagFontSize,
   });
 
   @override
@@ -101,7 +109,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
     return Text(
       value,
       style: GoogleFonts.poppins(
-        fontSize: 18,
+        fontSize: valueFontSize ?? 18,
         fontWeight: FontWeight.w600,
         color: valueColor,
       ),
@@ -116,7 +124,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
       child: Text(
         unitLabel,
         style: GoogleFonts.poppins(
-          fontSize: 13,
+          fontSize: unitFontSize ?? 13,
           color: unitColor ?? headingColor,
         ),
       ),
@@ -136,7 +144,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
         style: GoogleFonts.poppins(
           color: tagTextColor,
           fontWeight: FontWeight.w600,
-          fontSize: 12,
+          fontSize: tagFontSize ?? 12,
         ),
       ),
     );
@@ -147,7 +155,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
     return Text(
       heading!,
       style: GoogleFonts.poppins(
-        fontSize: 13,
+        fontSize: headingFontSize ?? 13,
         fontWeight: FontWeight.w500,
         color: headingColor,
       ),
