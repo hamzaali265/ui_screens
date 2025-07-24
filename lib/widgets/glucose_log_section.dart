@@ -48,6 +48,7 @@ class _GlucoseLogSectionState extends State<GlucoseLogSection> {
               _focusedDay = focusedDay;
             });
           },
+
           calendarBuilders: CalendarBuilders(
             defaultBuilder: (context, day, focusedDay) =>
                 _buildPillDay(day, false),
@@ -58,13 +59,14 @@ class _GlucoseLogSectionState extends State<GlucoseLogSection> {
             outsideBuilder: (context, day, focusedDay) =>
                 const SizedBox.shrink(),
           ),
-          rowHeight: 80,
+          rowHeight: 90,
           availableGestures: AvailableGestures.horizontalSwipe,
         ),
         const SizedBox(height: 14),
         LogEntry(),
         LogEntry(),
         LogEntry(),
+        const SizedBox(height: 100),
       ],
     );
   }
@@ -82,8 +84,7 @@ class _GlucoseLogSectionState extends State<GlucoseLogSection> {
         : Colors.black.withValues(alpha: 0.3);
 
     return Container(
-      width: 48,
-      height: 72,
+      width: 40,
       margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
       decoration: BoxDecoration(
         color: bgColor,
@@ -97,17 +98,17 @@ class _GlucoseLogSectionState extends State<GlucoseLogSection> {
             DateFormat('E').format(day),
             style: GoogleFonts.poppins(
               color: dayColor,
-              fontWeight: FontWeight.w600,
-              fontSize: 15,
+              fontWeight: FontWeight.w800,
+              fontSize: 12,
             ),
           ),
-          const SizedBox(height: 2),
+          const SizedBox(height: 22),
           Text(
             '${day.day}',
             style: GoogleFonts.poppins(
               fontWeight: FontWeight.bold,
               color: dateColor,
-              fontSize: 15,
+              fontSize: 12,
             ),
           ),
         ],
