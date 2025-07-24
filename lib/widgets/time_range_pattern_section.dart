@@ -8,86 +8,88 @@ class TimeInRangePatternsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const Color morningColor = Color(0xFFFFD700);
-    const Color afternoonColor = Color(0xFFFFA500);
-    const Color eveningColor = Color(0xFF1E90FF);
-    const Color nightColor = Color(0xFF483D8B);
-    final double cardWidth = MediaQuery.of(context).size.width * 0.45;
+    const spacing = 10.0;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Time in range patterns',
-          style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w600,
-            color: Colors.black,
-          ),
-        ),
-        const SizedBox(height: 10),
-        Wrap(
-          spacing: 10,
-          runSpacing: 10,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final double cardWidth = (constraints.maxWidth - spacing) / 2;
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: cardWidth,
-              child: ValueWithTagOrPercentageWidget(
-                leadingIcon: Icons.wb_sunny,
-                heading: 'Morning',
-                value: '85',
-                unit: ValueUnit.percentage,
-                valueColor: const Color(0xFF6C63FF),
-                showColumnLayout: false,
-                horizontal: 12,
-                vertical: 12,
-                iconColor: morningColor,
+            Text(
+              'Time in range patterns',
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
               ),
             ),
-            SizedBox(
-              width: cardWidth,
-              child: ValueWithTagOrPercentageWidget(
-                leadingIcon: Icons.wb_twilight,
-                heading: 'Afternoon',
-                value: '64',
-                unit: ValueUnit.percentage,
-                valueColor: const Color(0xFF6C63FF),
-                showColumnLayout: false,
-                horizontal: 12,
-                vertical: 12,
-                iconColor: afternoonColor,
-              ),
-            ),
-            SizedBox(
-              width: cardWidth,
-              child: ValueWithTagOrPercentageWidget(
-                leadingIcon: Icons.nights_stay,
-                heading: 'Evening',
-                value: '50',
-                unit: ValueUnit.percentage,
-                valueColor: const Color(0xFF6C63FF),
-                showColumnLayout: false,
-                horizontal: 12,
-                vertical: 12,
-                iconColor: eveningColor,
-              ),
-            ),
-            SizedBox(
-              width: cardWidth,
-              child: ValueWithTagOrPercentageWidget(
-                leadingIcon: Icons.nightlight_round,
-                heading: 'Night',
-                value: '93',
-                unit: ValueUnit.percentage,
-                valueColor: const Color(0xFF6C63FF),
-                showColumnLayout: false,
-                horizontal: 12,
-                vertical: 12,
-                iconColor: nightColor,
-              ),
+            const SizedBox(height: 10),
+            Wrap(
+              spacing: spacing,
+              runSpacing: spacing,
+              children: [
+                _buildCard(
+                  'Morning',
+                  Icons.wb_sunny,
+                  '85',
+                  ValueUnit.percentage,
+                  const Color(0xFFFFD700),
+                  cardWidth,
+                ),
+                _buildCard(
+                  'Afternoon',
+                  Icons.wb_twilight,
+                  '64',
+                  ValueUnit.percentage,
+                  const Color(0xFFFFA500),
+                  cardWidth,
+                ),
+                _buildCard(
+                  'Evening',
+                  Icons.nights_stay,
+                  '50',
+                  ValueUnit.percentage,
+                  const Color(0xFF1E90FF),
+                  cardWidth,
+                ),
+                _buildCard(
+                  'Night',
+                  Icons.nightlight_round,
+                  '93',
+                  ValueUnit.percentage,
+                  const Color(0xFF483D8B),
+                  cardWidth,
+                ),
+              ],
             ),
           ],
-        ),
-      ],
+        );
+      },
+    );
+  }
+
+  Widget _buildCard(
+    String heading,
+    IconData icon,
+    String value,
+    ValueUnit unit,
+    Color iconColor,
+    double width,
+  ) {
+    return SizedBox(
+      width: width,
+      child: ValueWithTagOrPercentageWidget(
+        leadingIcon: icon,
+        heading: heading,
+        value: value,
+        unit: unit,
+        valueColor: const Color(0xFF6C63FF),
+        showColumnLayout: false,
+        horizontal: 12,
+        vertical: 12,
+        iconColor: iconColor,
+      ),
     );
   }
 }
