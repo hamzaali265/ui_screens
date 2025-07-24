@@ -84,23 +84,32 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
 
   Widget _buildRowLayout() {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         if (leadingIcon != null) ...[
           Icon(leadingIcon, size: 18, color: valueColor),
           const SizedBox(width: 6),
         ],
-        if (heading != null && leadingIcon == null) ...[
-          _buildHeading(),
-          const Spacer(),
-          _buildValueText(),
-          _buildUnitText(),
-        ] else ...[
-          if (heading != null) ...[_buildHeading(), const SizedBox(width: 6)],
-          _buildValueText(),
-          _buildUnitText(),
+        if (heading != null) ...[
+          Expanded(
+            child: Text(
+              heading!,
+              style: GoogleFonts.poppins(
+                fontSize: headingFontSize ?? 13,
+                fontWeight: FontWeight.w500,
+                color: headingColor,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          const SizedBox(width: 6),
         ],
-        tag != null ? Spacer() : SizedBox.shrink(),
-        _buildTag(),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [_buildValueText(), _buildUnitText()],
+        ),
+        if (tag != null) ...[const SizedBox(width: 6), _buildTag()],
       ],
     );
   }
