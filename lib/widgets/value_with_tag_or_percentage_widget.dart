@@ -56,6 +56,47 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
     );
   }
 
+  Widget _buildColumnLayout() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (heading != null) _buildHeading(),
+        if (heading != null) const SizedBox(height: 6),
+        Row(
+          children: [
+            _buildValueText(),
+            _buildUnitText(),
+            const Spacer(),
+            _buildTag(),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildRowLayout() {
+    return Row(
+      children: [
+        if (leadingIcon != null) ...[
+          Icon(leadingIcon, size: 18, color: valueColor),
+          const SizedBox(width: 6),
+        ],
+        if (heading != null && leadingIcon == null) ...[
+          _buildHeading(),
+          const Spacer(),
+          _buildValueText(),
+          _buildUnitText(),
+        ] else ...[
+          if (heading != null) ...[_buildHeading(), const SizedBox(width: 6)],
+          _buildValueText(),
+          _buildUnitText(),
+        ],
+        tag != null ? Spacer() : SizedBox.shrink(),
+        _buildTag(),
+      ],
+    );
+  }
+
   Widget _buildValueText() {
     return Text(
       value,
@@ -110,47 +151,9 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
         fontWeight: FontWeight.w500,
         color: headingColor,
       ),
-    );
-  }
-
-  Widget _buildColumnLayout() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if (heading != null) _buildHeading(),
-        if (heading != null) const SizedBox(height: 6),
-        Row(
-          children: [
-            _buildValueText(),
-            _buildUnitText(),
-            const Spacer(),
-            _buildTag(),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget _buildRowLayout() {
-    return Row(
-      children: [
-        if (leadingIcon != null) ...[
-          Icon(leadingIcon, size: 18, color: valueColor),
-          const SizedBox(width: 6),
-        ],
-        if (heading != null && leadingIcon == null) ...[
-          _buildHeading(),
-          const Spacer(),
-          _buildValueText(),
-          _buildUnitText(),
-        ] else ...[
-          if (heading != null) ...[_buildHeading(), const SizedBox(width: 6)],
-          _buildValueText(),
-          _buildUnitText(),
-        ],
-        tag != null ? Spacer() : SizedBox.shrink(),
-        _buildTag(),
-      ],
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+      softWrap: true,
     );
   }
 }

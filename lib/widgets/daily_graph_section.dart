@@ -17,6 +17,10 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
 
   @override
   Widget build(BuildContext context) {
+    double cardWidth = MediaQuery.of(context).size.width;
+    final isSmallScreen = cardWidth < 400;
+    final itemWidth = isSmallScreen ? cardWidth : (cardWidth - 36) / 2;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -91,7 +95,6 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
           ),
           child: Stack(
             children: [
-              // Vertical grid lines
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(7, (index) {
@@ -102,7 +105,7 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
                   );
                 }),
               ),
-              // No data text
+
               Center(
                 child: Text(
                   'No data',
@@ -113,7 +116,7 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
                   ),
                 ),
               ),
-              // Time labels
+
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
@@ -181,24 +184,27 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
           ),
         ),
         const SizedBox(height: 20),
+
         Wrap(
           spacing: 12,
-          runSpacing: 12,
+          runSpacing: 8,
           children: [
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.48,
+              width: itemWidth,
               child: ValueWithTagOrPercentageWidget(
                 heading: "Average",
                 value: "46",
                 unit: ValueUnit.mgdl,
+                valueColor: Colors.blue,
               ),
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.48,
+              width: itemWidth,
               child: ValueWithTagOrPercentageWidget(
-                heading: "Average",
+                heading: "Time in range",
                 value: "46",
-                unit: ValueUnit.mgdl,
+                unit: ValueUnit.percentage,
+                valueColor: Colors.blue,
               ),
             ),
           ],
