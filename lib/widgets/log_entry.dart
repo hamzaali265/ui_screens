@@ -30,11 +30,7 @@ class LogEntry extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(
-                      Icons.restaurant_menu,
-                      size: 11,
-                      color: Colors.grey[500],
-                    ),
+                    Icon(Icons.restaurant, size: 11, color: Colors.grey[500]),
                     const SizedBox(width: 5),
                     Text(
                       '7:30 AM',
