@@ -10,7 +10,6 @@ import 'widgets/glucose_log_section.dart';
 import 'widgets/time_range_pattern_section.dart';
 import 'widgets/weekly_trend_section.dart';
 
-
 class GlucoseTrackingScreen extends StatefulWidget {
   const GlucoseTrackingScreen({super.key});
 
@@ -22,7 +21,7 @@ class _GlucoseTrackingScreenState extends State<GlucoseTrackingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF9F9F9),
+      backgroundColor: Colors.white,
       appBar: const CustomAppBar(title: 'Glucose tracking'),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),

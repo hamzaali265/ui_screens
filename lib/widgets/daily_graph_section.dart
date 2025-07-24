@@ -10,7 +10,7 @@ class DailyGraphSection extends StatefulWidget {
 
 class _DailyGraphSectionState extends State<DailyGraphSection> {
   String _selectedRange = 'Today';
-  final List<String> _ranges = ['Today', 'Month', 'Year'];
+  final List<String> _ranges = ['Today', 'Yesterday', 'This Week'];
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +21,14 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(100),
                 border: Border.all(color: const Color(0xFFEAEAEA)),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withValues(alpha: 0.03),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     blurRadius: 4,
                     offset: const Offset(0, 2),
                   ),
@@ -37,24 +37,35 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
                   value: _selectedRange,
-                  icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 20),
+                  icon: const Icon(
+                    Icons.keyboard_arrow_down_rounded,
+                    size: 16,
+                    color: Colors.grey,
+                  ),
                   style: GoogleFonts.poppins(
                     color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
                   ),
                   items: _ranges.map((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Row(
                         children: [
+                          const SizedBox(width: 6),
                           Icon(
                             Icons.calendar_today,
                             size: 18,
                             color: Colors.black,
                           ),
                           const SizedBox(width: 6),
-                          Text(value),
+                          Text(
+                            value,
+                            style: GoogleFonts.poppins(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
                         ],
                       ),
                     );
@@ -70,8 +81,8 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
             Text(
               'Daily graph',
               style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w600,
                 fontSize: 18,
+                fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
             ),
