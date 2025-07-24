@@ -104,7 +104,7 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
               width: double.infinity,
               height: 140,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color(0xffF2F2F2),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: const Color(0xFFEAEAEA)),
               ),
