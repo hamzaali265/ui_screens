@@ -10,7 +10,7 @@ class LogEntry extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Color(0xffF2F2F2),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: const Color(0xFFE5E5E5)),
         boxShadow: [
@@ -24,7 +24,6 @@ class LogEntry extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Content
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,16 +49,6 @@ class LogEntry extends StatelessWidget {
                 const SizedBox(height: 2),
                 Row(
                   children: [
-                    // Icon
-                    // Container(
-                    //   width: 6,
-                    //   height: 6,
-                    //   margin: const EdgeInsets.only(top: 20),
-                    //   decoration: const BoxDecoration(
-                    //     color: Color(0xFFFFC542),
-                    //     shape: BoxShape.circle,
-                    //   ),
-                    // ),
                     Icon(
                       Icons.breakfast_dining,
                       size: 14,
@@ -97,15 +86,18 @@ class LogEntry extends StatelessWidget {
               ],
             ),
           ),
-          // Right side
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: const Color(0xFFFFF4E6),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.all(color: const Color(0xFFE67E22), width: 1),
                 ),
                 child: Text(
                   '154 mg/dL',
