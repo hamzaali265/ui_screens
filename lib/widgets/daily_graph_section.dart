@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../enums.dart';
+import 'value_with_tag_or_percentage_widget.dart';
+
 class DailyGraphSection extends StatefulWidget {
   const DailyGraphSection({super.key});
 
@@ -14,6 +17,10 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
 
   @override
   Widget build(BuildContext context) {
+    double cardWidth = MediaQuery.of(context).size.width;
+    final isSmallScreen = cardWidth < 400;
+    final itemWidth = isSmallScreen ? cardWidth : (cardWidth - 36) / 2;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -88,7 +95,6 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
           ),
           child: Stack(
             children: [
-              // Vertical grid lines
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(7, (index) {
@@ -99,7 +105,7 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
                   );
                 }),
               ),
-              // No data text
+
               Center(
                 child: Text(
                   'No data',
@@ -110,7 +116,7 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
                   ),
                 ),
               ),
-              // Time labels
+
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
@@ -176,6 +182,32 @@ class _DailyGraphSectionState extends State<DailyGraphSection> {
               ),
             ],
           ),
+        ),
+        const SizedBox(height: 20),
+
+        Wrap(
+          spacing: 12,
+          runSpacing: 8,
+          children: [
+            SizedBox(
+              width: itemWidth,
+              child: ValueWithTagOrPercentageWidget(
+                heading: "Average",
+                value: "46",
+                unit: ValueUnit.mgdl,
+                valueColor: Colors.blue,
+              ),
+            ),
+            SizedBox(
+              width: itemWidth,
+              child: ValueWithTagOrPercentageWidget(
+                heading: "Time in range",
+                value: "46",
+                unit: ValueUnit.percentage,
+                valueColor: Colors.blue,
+              ),
+            ),
+          ],
         ),
       ],
     );
