@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ui_screens/enums.dart';
 
 import 'package:ui_screens/widgets/custom_appbar.dart';
+import 'package:ui_screens/widgets/value_with_tag_or_percentage_widget.dart';
 
 import 'widgets/add_entry_model.dart';
 import 'widgets/current_glucose_section.dart';
@@ -9,7 +11,6 @@ import 'widgets/daily_graph_section.dart';
 import 'widgets/glucose_log_section.dart';
 import 'widgets/time_range_pattern_section.dart';
 import 'widgets/weekly_trend_section.dart';
-
 
 class GlucoseTrackingScreen extends StatefulWidget {
   const GlucoseTrackingScreen({super.key});
@@ -40,6 +41,25 @@ class _GlucoseTrackingScreenState extends State<GlucoseTrackingScreen> {
             TimeInRangePatternsSection(),
             const SizedBox(height: 24),
             GlucoseLogSection(),
+            ValueWithTagOrPercentageWidget(
+              heading: 'Average',
+              value: '46',
+              unit: ValueUnit.mgdl,
+              valueColor: const Color(0xFF377DFF),
+            ),
+            ValueWithTagOrPercentageWidget(
+              heading: 'Time in range',
+              value: '77',
+              unit: ValueUnit.percentage,
+              valueColor: const Color(0xFF377DFF),
+            ),
+            ValueWithTagOrPercentageWidget(
+              leadingIcon: Icons.wb_sunny_outlined,
+              heading: 'Morning',
+              value: '85',
+              unit: ValueUnit.percentage,
+              valueColor: const Color(0xFFFAB91C),
+            ),
           ],
         ),
       ),
