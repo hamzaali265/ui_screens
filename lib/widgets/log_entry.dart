@@ -11,101 +11,136 @@ class LogEntry extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFFEAEAEA)),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: const Color(0xFFE5E5E5)),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withValues(alpha: 0.04),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
+            color: Colors.grey.withValues(alpha: 0.06),
+            blurRadius: 6,
+            offset: const Offset(0, 1),
           ),
         ],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(
-            Icons.breakfast_dining,
-            color: const Color(0xFFFFC542),
-            size: 28,
-          ),
-          const SizedBox(width: 10),
+          // Content
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '7:30 AM',
-                  style: GoogleFonts.poppins(
-                    fontSize: 12,
-                    color: Colors.grey[500],
-                    fontWeight: FontWeight.w500,
-                  ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.restaurant_menu,
+                      size: 11,
+                      color: Colors.grey[500],
+                    ),
+                    const SizedBox(width: 5),
+                    Text(
+                      '7:30 AM',
+                      style: GoogleFonts.poppins(
+                        fontSize: 11,
+                        color: Colors.grey[500],
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 2),
-                Text(
-                  'Breakfast',
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 15,
-                    color: Colors.black,
-                  ),
+                Row(
+                  children: [
+                    // Icon
+                    // Container(
+                    //   width: 6,
+                    //   height: 6,
+                    //   margin: const EdgeInsets.only(top: 20),
+                    //   decoration: const BoxDecoration(
+                    //     color: Color(0xFFFFC542),
+                    //     shape: BoxShape.circle,
+                    //   ),
+                    // ),
+                    Icon(
+                      Icons.breakfast_dining,
+                      size: 14,
+                      color: const Color(0xFFFFC542),
+                    ),
+                    const SizedBox(width: 5),
+                    Text(
+                      'Breakfast',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
+                const SizedBox(height: 1),
                 Text(
                   'Oatmeal with berries',
-                  style: GoogleFonts.poppins(fontSize: 13, color: Colors.black),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  '52g carbs   65g protein   6g fats',
                   style: GoogleFonts.poppins(
-                    fontSize: 12,
-                    color: Colors.grey[600],
-                    fontWeight: FontWeight.w500,
+                    fontSize: 13,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  '52g carbs    65g protein    6g fats',
+                  style: GoogleFonts.poppins(
+                    fontSize: 11,
+                    color: Colors.grey[500],
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ],
             ),
           ),
+          // Right side
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 4,
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFFFF7E0),
-                  borderRadius: BorderRadius.circular(12),
+                  color: const Color(0xFFFFF4E6),
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
                   '154 mg/dL',
                   style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFFFFA726),
-                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: const Color(0xFFE67E22),
+                    fontSize: 11,
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
-              OutlinedButton(
-                onPressed: () {},
-                style: OutlinedButton.styleFrom(
-                  minimumSize: const Size(40, 28),
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  side: const BorderSide(color: Color(0xFFEAEAEA)),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                decoration: BoxDecoration(
+                  border: Border.all(color: const Color(0xFFE5E5E5)),
+                  borderRadius: BorderRadius.circular(6100),
                 ),
-                child: Text(
-                  'Edit',
-                  style: GoogleFonts.poppins(
-                    fontSize: 12,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                  ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.edit_outlined,
+                      size: 12,
+                      color: Colors.grey[600],
+                    ),
+                    const SizedBox(width: 4),
+                    Text(
+                      'Edit',
+                      style: GoogleFonts.poppins(
+                        fontSize: 11,
+                        color: Colors.grey[600],
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
