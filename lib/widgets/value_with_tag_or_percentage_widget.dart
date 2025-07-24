@@ -73,7 +73,7 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
         Row(
           children: [
             _buildValueText(),
-            _buildUnitText(),
+            Flexible(child: _buildUnitText()),
             const Spacer(),
             _buildTag(),
           ],
@@ -118,11 +118,13 @@ class ValueWithTagOrPercentageWidget extends StatelessWidget {
 
   Widget _buildUnitText() {
     if (unit == null) return const SizedBox();
-    final unitLabel = unit == ValueUnit.mgdl ? 'mg/dL' : '%';
+    final unitLabel = unit == ValueUnit.mgdl ? 'mg/dl' : '%';
     return Padding(
       padding: const EdgeInsets.only(left: 2),
       child: Text(
         unitLabel,
+        overflow: TextOverflow.clip,
+        maxLines: 2,
         style: GoogleFonts.poppins(
           fontSize: unitFontSize ?? 13,
           color: unitColor ?? headingColor,
